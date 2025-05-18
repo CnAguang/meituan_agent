@@ -16,7 +16,7 @@ from pydantic import BaseModel
 
 os.environ['USER_AGENT'] = 'Your-App-Name/1.0'
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
-os.environ['LANGCHAIN_API_KEY'] = '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'
+os.environ['LANGCHAIN_API_KEY'] = 'lsv2_pt_8317874d95917f0de'
 
 #加载ollama模型
 model = ChatOpenAI(model='meitua1.5bmodel:latest',base_url='http://localhost:11434/v1',openai_api_key='123',streaming=False)
@@ -36,7 +36,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 splitter = RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap=20)
 splits = splitter.split_documents(documents)
 #分割后的文本进行存储
-embedding_store = Chroma.from_documents(documents=splits,embedding=ZhipuAIEmbeddings(api_key='a0405e581a1745b1a1d563ef386ff02f.0Q82NTjEmMuElQV3'))
+embedding_store = Chroma.from_documents(documents=splits,embedding=ZhipuAIEmbeddings(api_key='a0405e581a17NTjEmMuElQV3'))
 #变为检索器
 retriever = embedding_store.as_retriever()
 
